@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 1</title>
+</head>
+<body>
+    <h1>Zadatak 1</h1>
+    {% block content %}
+        <form method="POST" action="/">
+            <label for="iznos">Iznos neto place</label>
+            <input name="neto_placa" type="text" pattern="^\d*\.?\d+$" id="neto_placa" required>
+            <span>kn</span>
+            <br>
+            <br>
+
+            <label for="radni_dani">Broj radnih dana</label>
+            <input name="radni_dani" type="text" pattern="^\d*\.?\d+$" id="radni_dani" required>
+            <br>
+            <br>
+
+            <label for="iznos">Zeljeni iznos</label>
+            <input name="iznos" type="text" pattern="^\d*\.?\d+$" id="iznos" required>
+            <span>kn</span>
+            <br>
+            <br>
+
+            <input type="submit">
+        </form>
+    {% endblock %}
+    {% if recenica %}
+        <h3>Za zeljenu placu morate odradit</h3>
+        <h4>{{ recenica }}</h4>
+    {% endif %}
+
+</body>
+</html>
